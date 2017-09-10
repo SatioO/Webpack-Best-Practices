@@ -40,14 +40,12 @@ if (process.env.NODE_ENV === "development") {
 } else {
 	// eslint-disable-next-line no-console
 	console.log("inside prod")
-	webpack([clientConfigProd]).run((err, stats) => {
-		// const clientStats = stats.toJson().children[0]
-		// const serverRender = require("../../build/main.js").default
+	// eslint-disable-next-line no-unused-vars
+	webpack([clientConfigProd]).run(err => {
 		app.use(
 			publicPath,
 			expressStaticGzip(outputPath, { enableBrotli: false })
 		)
-		// app.use(serverRender({ clientStats }))
 		done()
 	})
 }

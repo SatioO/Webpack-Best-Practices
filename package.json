@@ -1,9 +1,10 @@
 {
   "name": "webact",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.common.js",
+  "description": "Webpack/React best practice",
+  "main": "client/index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "better-npm-run dev",
     "clean": "rimraf public build",
     "start:prod": "better-npm-run prod",
@@ -24,6 +25,9 @@
         "PORT": 8080
       }
     }
+  },
+  "bugs": {
+    "url": "https://github.com/SatioO/React-Practices/issues"
   },
   "lint-staged": {
     "*.js": [
@@ -64,6 +68,7 @@
     "express-static-gzip": "^0.3.0",
     "extract-css-chunks-webpack-plugin": "^2.0.17",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
     "less": "2.7.2",
     "less-loader": "4.0.5",
     "prettier": "^1.6.1",
@@ -76,8 +81,12 @@
     "webpack-hot-middleware": "2.19.1",
     "webpack-hot-server-middleware": "0.1.0"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "webpack",
+    "minimal react template"
+  ],
+  "author": "Vaibhav Satam<vaibhav.satam29991@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "react": "^15.6.1",
