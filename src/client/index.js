@@ -1,8 +1,15 @@
-// eslint-disable-next-line no-unused-vars
-import App from "App"
+import { h, render } from "preact"
+let root = document.getElementById("root").lastElementChild
+
+function init() {
+	const App = require("App").default
+	root = render(<App />, document.getElementById("root"), root)
+}
 
 if (module.hot) {
 	module.hot.accept("App", () => {
-		// window.requestAnimationFrame(init)
+		window.requestAnimationFrame(init)
 	})
 }
+
+init()
