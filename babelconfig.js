@@ -16,11 +16,15 @@ module.exports = () => {
 			"syntax-dynamic-import",
 			"universal-import",
 			"transform-runtime",
-			["transform-react-jsx"],
+			["transform-react-jsx", { pragma: "h" }],
 			[
 				"module-resolver",
 				{
-					root: ["./src"]
+					root: ["./src"],
+					alias: {
+						react: "preact-compat",
+						"react-dom": "preact-compat"
+					}
 				}
 			]
 		],

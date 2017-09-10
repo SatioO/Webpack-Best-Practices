@@ -1,10 +1,11 @@
-const { join, sep } = require("path");
+const { join, sep } = require("path")
 const babelConfig = require("../babelconfig")
+const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 
-const joinPath = src => join(__dirname, '..', src);
+const joinPath = src => join(__dirname, "..", src)
 
 const PATHS = {
-    NODE_MODULES: joinPath("node_modules"),
+	NODE_MODULES: joinPath("node_modules"),
 	SRC: joinPath("src"),
 	APP: joinPath(`src${sep}app`),
 	CLIENT: joinPath(`src${sep}client`),
@@ -13,11 +14,15 @@ const PATHS = {
 }
 
 const commonConfig = {
-    context: PATHS.SRC,
-    resolve: {
-        extensions: [ ".js", ".jsx", ".css", ".less", ".json" ],
-        modules: [ PATHS.APP, PATHS.CLIENT,PATHS.SERVER, PATHS.NODE_MODULES ]
-    }
+	context: PATHS.SRC,
+	resolve: {
+		extensions: [".js", ".jsx", ".css", ".less", ".json"],
+		alias: {
+			react: "preact-compat",
+			"react-dom": "preact-compat"
+		},
+		modules: [PATHS.APP, PATHS.CLIENT, PATHS.SERVER, PATHS.NODE_MODULES]
+	}
 }
 
 const clientCommon = Object.assign({}, commonConfig, {
@@ -26,7 +31,7 @@ const clientCommon = Object.assign({}, commonConfig, {
 	devtool: "eval",
 	output: {
 		path: PATHS.PUBLIC,
-		publicPath: '/'
+		publicPath: "/"
 	},
 	module: {
 		rules: [
@@ -39,9 +44,51 @@ const clientCommon = Object.assign({}, commonConfig, {
 						cacheDirectory: true
 					})
 				}
+			},
+			{
+				test: /\.less$/,
+				exclude: /node_modules/,
+				use: ExtractCssChunks.extract({
+					use: [
+						{
+							loader: "css-loader",
+							options: {
+								minimize: true,
+								modules: true,
+								localIdentName:
+									"[name]__[local]--[hash:base64:5]"
+							}
+						},
+						{
+							loader: "less-loader",
+							options: {
+								strictMath: true,
+								noIeCompat: true,
+								lint: true,
+								strictImports: true,
+								strictUnits: true
+							}
+						}
+					]
+				})
+			},
+			{
+				test: /\.css$/,
+				use: ExtractCssChunks.extract({
+					use: [
+						{
+							loader: "css-loader",
+							options: {
+								modules: true,
+								localIdentName:
+									"[name]__[local]--[hash:base64:5]"
+							}
+						}
+					]
+				})
 			}
 		]
 	}
-});
-   
-module.exports = { clientCommon, PATHS };
+})
+
+module.exports = { clientCommon, PATHS }

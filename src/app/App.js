@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { h } from "preact"
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <div>Hello world</div>
-        )
-    }
+const App = () => {
+	return (
+		<div>
+			{"Hello"}
+			{"Vaibhav"}
+			<p>{"world class"}</p>
+		</div>
+	)
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App
