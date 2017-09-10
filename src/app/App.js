@@ -1,8 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { colored } from "style.less"
 
 const App = () => {
-	return <div> {"Hello world"} </div>
+	return <div className={colored}> {"Hello world"} </div>
 }
 
 ReactDOM.render(<App />, document.getElementById("root"))

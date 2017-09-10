@@ -1,6 +1,7 @@
 const { clientCommon, PATHS } = require("./webpack.common")
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 
 const clientConfig = Object.assign({}, clientCommon, {
 	entry: [
@@ -22,6 +23,7 @@ const clientConfig = Object.assign({}, clientCommon, {
 		chunkFilename: "[name].js"
 	}),
 	plugins: [
+		new ExtractCssChunks({ filename: "[name].css" }),
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			template: PATHS.SRC + "/index.html"

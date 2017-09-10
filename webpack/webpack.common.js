@@ -1,5 +1,6 @@
 const { join, sep } = require("path")
 const babelConfig = require("../babelconfig")
+const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 
 const joinPath = src => join(__dirname, "..", src)
 
@@ -39,6 +40,48 @@ const clientCommon = Object.assign({}, commonConfig, {
 						cacheDirectory: true
 					})
 				}
+			},
+			{
+				test: /\.less$/,
+				exclude: /node_modules/,
+				use: ExtractCssChunks.extract({
+					use: [
+						{
+							loader: "css-loader",
+							options: {
+								minimize: true,
+								modules: true,
+								localIdentName:
+									"[name]__[local]--[hash:base64:5]"
+							}
+						},
+						{
+							loader: "less-loader",
+							options: {
+								strictMath: true,
+								noIeCompat: true,
+								lint: true,
+								strictImports: true,
+								strictUnits: true
+							}
+						}
+					]
+				})
+			},
+			{
+				test: /\.css$/,
+				use: ExtractCssChunks.extract({
+					use: [
+						{
+							loader: "css-loader",
+							options: {
+								modules: true,
+								localIdentName:
+									"[name]__[local]--[hash:base64:5]"
+							}
+						}
+					]
+				})
 			}
 		]
 	}
