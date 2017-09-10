@@ -5,3 +5,4 @@ sudo: false
 env:
 - PORT=8080
 - NODE_ENV=production
+script: npm run lint
