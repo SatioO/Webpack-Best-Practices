@@ -1,11 +1,9 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import { colored } from "style.less"
+import { h, render } from "preact"
 
-const App = () => {
-	return <div className={colored}> {"Hello world"} </div>
+function App() {
+	return <div>{"Hello World"}</div>
 }
 
-ReactDOM.render(<App />, document.getElementById("root"))
+render(<App />, document.querySelector("#root"))
 
 export default App

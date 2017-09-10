@@ -88,7 +88,11 @@
   "author": "Vaibhav Satam<vaibhav.satam29991@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "preact": "8.2.5",
+    "preact-compat": "3.17.0",
+    "preact-mdl": "2.2.1",
+    "preact-redux": "2.0.2",
+    "preact-router": "2.5.7",
+    "preact-router-redux": "4.1.0"
   }
 }

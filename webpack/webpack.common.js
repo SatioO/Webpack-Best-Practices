@@ -17,6 +17,10 @@ const commonConfig = {
 	context: PATHS.SRC,
 	resolve: {
 		extensions: [".js", ".jsx", ".css", ".less", ".json"],
+		alias: {
+			react: "preact-compat",
+			"react-dom": "preact-compat"
+		},
 		modules: [PATHS.APP, PATHS.CLIENT, PATHS.SERVER, PATHS.NODE_MODULES]
 	}
 }
