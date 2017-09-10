@@ -1,3 +1,3 @@
-# React-Best-Practices
+# Webpack-Best-Practices
 
-#### Trying to improve react practices.
+#### Trying to improve webpack practices.

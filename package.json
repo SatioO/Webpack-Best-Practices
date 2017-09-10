@@ -4,7 +4,6 @@
   "description": "Webpack/React best practice",
   "main": "client/index.js",
   "scripts": {
-    "precommit": "lint-staged",
     "start": "better-npm-run dev",
     "clean": "rimraf public build",
     "start:prod": "better-npm-run prod",
