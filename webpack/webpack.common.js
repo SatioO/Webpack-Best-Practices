@@ -1,10 +1,10 @@
-const { join, sep } = require("path");
+const { join, sep } = require("path")
 const babelConfig = require("../babelconfig")
 
-const joinPath = src => join(__dirname, '..', src);
+const joinPath = src => join(__dirname, "..", src)
 
 const PATHS = {
-    NODE_MODULES: joinPath("node_modules"),
+	NODE_MODULES: joinPath("node_modules"),
 	SRC: joinPath("src"),
 	APP: joinPath(`src${sep}app`),
 	CLIENT: joinPath(`src${sep}client`),
@@ -13,11 +13,11 @@ const PATHS = {
 }
 
 const commonConfig = {
-    context: PATHS.SRC,
-    resolve: {
-        extensions: [ ".js", ".jsx", ".css", ".less", ".json" ],
-        modules: [ PATHS.APP, PATHS.CLIENT,PATHS.SERVER, PATHS.NODE_MODULES ]
-    }
+	context: PATHS.SRC,
+	resolve: {
+		extensions: [".js", ".jsx", ".css", ".less", ".json"],
+		modules: [PATHS.APP, PATHS.CLIENT, PATHS.SERVER, PATHS.NODE_MODULES]
+	}
 }
 
 const clientCommon = Object.assign({}, commonConfig, {
@@ -26,7 +26,7 @@ const clientCommon = Object.assign({}, commonConfig, {
 	devtool: "eval",
 	output: {
 		path: PATHS.PUBLIC,
-		publicPath: '/'
+		publicPath: "/"
 	},
 	module: {
 		rules: [
@@ -42,6 +42,6 @@ const clientCommon = Object.assign({}, commonConfig, {
 			}
 		]
 	}
-});
-   
-module.exports = { clientCommon, PATHS };
+})
+
+module.exports = { clientCommon, PATHS }

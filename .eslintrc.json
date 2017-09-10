@@ -1,0 +1,46 @@
+{
+	"parser": "babel-eslint",
+	"extends": ["eslint:recommended", "plugin:react/all","prettier"],
+	"plugins":["react","prettier"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true,
+			"ecmaVersion":6,
+			"experimentalObjectRestSpread":true
+		}
+	 },
+	 "globals": {
+		 "require":true,
+		 "__dirname":true,
+		 "module":true,
+		 "Promise":true,
+		 "console":true,
+		 "document": true,
+		 "window": true,
+		 "process": true,
+		 "__DEV__": true,
+		 "__SERVER__":true,
+		 "__PROD__":true,
+		 "fetch": true,
+		 "importScripts":true,
+		 "global":true,
+		 "serviceWorkerOption":true
+
+	 },
+	"rules": {
+		"react/jsx-indent":[2,"tab"],
+		"react/jsx-indent-props":0,
+		"react/react-in-jsx-scope":0,
+		"react/prop-types":0,
+		"react/no-unused-prop-types":0,
+		"react/forbid-component-props":0,
+		"no-unused-vars": [2,{"varsIgnorePattern":"^h$"}],
+		"react/jsx-filename-extension":[2,{"extensions":[".js"]}],
+		"react/jsx-max-props-per-line":0,
+		"prettier/prettier":["error",{
+			"tabWidth":4,
+			"useTabs":true,
+			"semi":false
+		}]
+	}
+}

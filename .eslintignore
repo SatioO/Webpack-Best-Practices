@@ -1,0 +1,10 @@
+*.css
+*.less
+*.html
+*.md
+*.sh
+*.log
+*.json
+build/
+public/
+node_modules/
