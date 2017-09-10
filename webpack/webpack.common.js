@@ -16,7 +16,7 @@ const commonConfig = {
     context: PATHS.SRC,
     resolve: {
         extensions: [ ".js", ".jsx", ".css", ".less", ".json" ],
-        modules: [ PATHS.APP, PATHS.CLIENT, PATHS.NODE_MODULES ]
+        modules: [ PATHS.APP, PATHS.CLIENT,PATHS.SERVER, PATHS.NODE_MODULES ]
     }
 }
 
@@ -25,7 +25,8 @@ const clientCommon = Object.assign({}, commonConfig, {
 	target: "web",
 	devtool: "eval",
 	output: {
-		path: PATHS.PUBLIC
+		path: PATHS.PUBLIC,
+		publicPath: '/'
 	},
 	module: {
 		rules: [

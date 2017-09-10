@@ -5,11 +5,12 @@
   "main": "webpack.common.js",
   "scripts": {
     "start": "better-npm-run dev",
+    "clean": "rimraf public build",
     "start:prod": "better-npm-run prod"
   },
   "betterScripts": {
     "dev": {
-      "command": "webpack-dev-server --config webpack/webpack.client.js",
+      "command": "yarn run clean && node src/server/run.js",
       "env": {
         "NODE_ENV": "development",
         "PORT": 8080
@@ -45,7 +46,8 @@
     "webpack-dev-server": "^2.7.1",
     "webpack-dev-middleware": "1.12.0",
     "webpack-hot-middleware": "2.19.1",
-    "webpack-hot-server-middleware": "0.1.0"
+    "webpack-hot-server-middleware": "0.1.0",
+    "rimraf": "2.6.1"
   },
   "keywords": [],
   "author": "",

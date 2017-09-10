@@ -1,12 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import App from 'App';
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <div>Hello World</div>
-        )
-    }
+if(module.hot){
+    module.hot.accept("App", () => {
+        // window.requestAnimationFrame(init)
+    })
 }
-
-ReactDOM.render(<App />, document.getElementById("root"));

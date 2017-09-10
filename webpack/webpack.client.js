@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const clientConfig = Object.assign({}, clientCommon, {
     entry: [
+		"webpack-hot-middleware/client?name=client&path=/__webpack_hmr&timeout=20000&reload=false&quiet=false&noInfo=false",        
         PATHS.CLIENT
     ],
     devServer: {
@@ -13,7 +14,7 @@ const clientConfig = Object.assign({}, clientCommon, {
 		disableHostCheck: true,
 		host: "0.0.0.0",
         noInfo: false,
-        // hot: true,
+        hot:true,
 		overlay: true
 	},
     output: Object.assign({}, clientCommon.output, {
@@ -21,6 +22,7 @@ const clientConfig = Object.assign({}, clientCommon, {
 		chunkFilename: "[name].js"
     }),
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: PATHS.SRC + '/index.html'
         }),
