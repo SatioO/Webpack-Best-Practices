@@ -8,6 +8,8 @@ const PATHS = {
 	NODE_MODULES: joinPath("node_modules"),
 	SRC: joinPath("src"),
 	APP: joinPath(`src${sep}app`),
+	COMPONENTS: joinPath(`src${sep}app${sep}components`),
+	CONTAINERS: joinPath(`src${sep}app${sep}containers`),
 	CLIENT: joinPath(`src${sep}client`),
 	SERVER: joinPath(`src${sep}server`),
 	PUBLIC: joinPath("public")
@@ -21,7 +23,14 @@ const commonConfig = {
 			react: "preact-compat",
 			"react-dom": "preact-compat"
 		},
-		modules: [PATHS.APP, PATHS.CLIENT, PATHS.SERVER, PATHS.NODE_MODULES]
+		modules: [
+			PATHS.APP,
+			PATHS.CLIENT,
+			PATHS.SERVER,
+			PATHS.NODE_MODULES,
+			PATHS.COMPONENTS,
+			PATHS.CONTAINERS
+		]
 	}
 }
 

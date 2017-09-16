@@ -1,7 +1,7 @@
 import { h } from "preact"
 import { connect } from "preact-redux"
 import { incrementCount, decrementCount } from "actions"
-import { Counter } from "components/Counter"
+import { Counter } from "Counter"
 
 const App = ({ count, decrement, increment }) => {
 	return (
