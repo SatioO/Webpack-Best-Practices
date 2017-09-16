@@ -43,6 +43,7 @@
     "babel-plugin-dynamic-import-webpack": "^1.0.1",
     "babel-plugin-module-resolver": "2.7.1",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.8",
@@ -96,6 +97,7 @@
     "preact-router": "2.5.7",
     "preact-router-redux": "4.1.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   }
 }

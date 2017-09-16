@@ -15,6 +15,7 @@ module.exports = () => {
 		plugins: [
 			"syntax-dynamic-import",
 			"universal-import",
+			"transform-class-properties",
 			"babel-plugin-transform-object-rest-spread",
 			"transform-runtime",
 			["transform-react-jsx", { pragma: "h" }],

@@ -1,10 +1,7 @@
 import { h, render } from "preact"
 // Redux Logic
 import { Provider } from "preact-redux"
-import { createStore } from "redux"
-import counterApp from "reducers"
-
-let store = createStore(counterApp)
+import store from "store"
 
 let root = document.getElementById("root").lastElementChild
 

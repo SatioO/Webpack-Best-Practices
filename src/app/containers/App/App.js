@@ -1,18 +1,37 @@
-import { h } from "preact"
+import { h, Component } from "preact"
 import { connect } from "preact-redux"
 import { incrementCount, decrementCount } from "actions"
 import { Counter } from "Counter"
 
-const App = ({ count, decrement, increment }) => {
-	return (
-		<div>
-			<Counter
-				count={count}
-				decrement={decrement}
-				increment={increment}
-			/>
-		</div>
-	)
+class App extends Component {
+	constructor() {
+		super()
+	}
+
+	shouldComponentUpdate() {
+		return true
+	}
+
+	increment = () => {
+		this.props.dispatch(incrementCount())
+	}
+
+	decrement = () => {
+		this.props.dispatch(decrementCount())
+	}
+
+	render() {
+		const { count } = this.props
+		return (
+			<div>
+				<Counter
+					count={count}
+					decrement={this.decrement}
+					increment={this.increment}
+				/>
+			</div>
+		)
+	}
 }
 
 const mapStateToProps = state => {
@@ -21,11 +40,4 @@ const mapStateToProps = state => {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return {
-		increment: () => dispatch(incrementCount()),
-		decrement: () => dispatch(decrementCount())
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps)(App)
