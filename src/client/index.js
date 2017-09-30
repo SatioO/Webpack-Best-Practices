@@ -1,9 +1,11 @@
 import { h, render } from "preact"
 // Redux Logic
 import { Provider } from "preact-redux"
-import store from "store"
+import configureStore from "redux/store"
 
 let root = document.getElementById("root").lastElementChild
+
+let store = configureStore()
 
 function init() {
 	const App = require("App").default
