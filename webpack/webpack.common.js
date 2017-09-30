@@ -7,9 +7,9 @@ const joinPath = src => join(__dirname, "..", src)
 const PATHS = {
 	NODE_MODULES: joinPath("node_modules"),
 	SRC: joinPath("src"),
-	APP: joinPath(`src${sep}app`),
-	COMPONENTS: joinPath(`src${sep}app${sep}components`),
-	CONTAINERS: joinPath(`src${sep}app${sep}containers`),
+	SHARED: joinPath(`src${sep}shared`),
+	COMPONENTS: joinPath(`src${sep}shared${sep}components`),
+	CONTAINERS: joinPath(`src${sep}shared${sep}containers`),
 	CLIENT: joinPath(`src${sep}client`),
 	SERVER: joinPath(`src${sep}server`),
 	PUBLIC: joinPath("public")
@@ -24,7 +24,7 @@ const commonConfig = {
 			"react-dom": "preact-compat"
 		},
 		modules: [
-			PATHS.APP,
+			PATHS.SHARED,
 			PATHS.CLIENT,
 			PATHS.SERVER,
 			PATHS.NODE_MODULES,
