@@ -9,6 +9,7 @@ export default class App extends Component {
 		super()
 	}
 
+	//Best Practices
 	componentWillMount() {
 		this.props.getPosts()
 	}
