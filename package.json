@@ -92,7 +92,7 @@
   "author": "Vaibhav Satam<vaibhav.satam29991@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "preact": "8.2.5",
+    "preact": "8.4.1",
     "preact-compat": "3.17.0",
     "preact-mdl": "2.2.2",
     "preact-redux": "2.0.3",
