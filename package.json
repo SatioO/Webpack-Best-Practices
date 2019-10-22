@@ -96,7 +96,7 @@
     "preact-compat": "3.17.0",
     "preact-mdl": "2.2.2",
     "preact-redux": "2.0.3",
-    "preact-router": "2.5.7",
+    "preact-router": "3.1.0",
     "preact-router-redux": "4.1.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
